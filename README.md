@@ -1,3 +1,6 @@
+[![ShellSpec](https://github.com/Lohn/tildelog/actions/workflows/ubuntu-focal.yml/badge.svg)](https://github.com/Lohn/tildelog/actions/workflows/ubuntu-focal.yml)
+[![Coverage Status](https://coveralls.io/repos/github/Lohn/tildelog/badge.svg?branch=main)](https://coveralls.io/github/Lohn/tildelog?branch=main)
+
 # Tildelog
 
 This is the source for the Tildelog. 
