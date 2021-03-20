@@ -17,7 +17,7 @@ jobs:
     steps:      
       - run: sudo apt-get install -y ${{ matrix.shells.package }}
       - name: Install Shellspec - non-windows
-        if: ${{ matrix.os != 'windows' && matrix.snyk_install_method != 'alpine-binary' }}
+        if: ${{ matrix.os != 'windows' }}
         run: |
           curl -fsSL https://git.io/shellspec | sh -s -- -y
           sudo ln -s ${HOME}/.local/lib/shellspec/shellspec /usr/local/bin/shellspec
