@@ -15,7 +15,7 @@ jobs:
           - {shell: bash,        package: bash}
       fail-fast: false
     steps:      
-      - run: sudo apt-get install -y ${{ matrix.shells.package }}
+      - run: sudo apt-get install -y ${{ matrix.shells.package }} bash
       - name: Install Shellspec - non-windows
         if: ${{ matrix.os != 'windows' }}
         run: |
@@ -27,5 +27,8 @@ jobs:
           /usr/local/bin/shellspec --version
           which shellspec
           shellspec --version
+      - run: | 
+          curl -Lo- "https://raw.githubusercontent.com/bpkg/bpkg/master/setup.sh" | bash
       - uses: actions/checkout@v2
+      - run: bpkg getdeps
       - run: SH="${{ matrix.shells.shell }}" shellspec
