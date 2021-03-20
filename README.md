@@ -2,8 +2,8 @@
 [![Code Coverage](https://codecov.io/gh/Lohn/tildelog/branch/main/graph/badge.svg?token=0I58TLFI96)](https://codecov.io/gh/Lohn/tildelog)
 
 # Tildelog 
-## A not-so-simple blog/gemlog/phlog Static Site Generator made in Shell
 
+*A not-so-simple blog/gemlog/phlog Static Site Generator made in Shell*
 
 
 This is the source for the Tildelog. 
