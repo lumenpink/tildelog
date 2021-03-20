@@ -24,6 +24,10 @@ jobs:
           /usr/local/bin/shellspec --version
           which shellspec
           shellspec --version
+      - name: Install bpkg and dependencies
+        run: |         
+          curl -Lo- "https://raw.githubusercontent.com/bpkg/bpkg/master/setup.sh" | bash
+          bpkg getdeps
       - name: Run shellspec and upload coverage (Coveralls)
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
