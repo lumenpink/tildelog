@@ -1,0 +1,14 @@
+{
+  "name": "tildelog",
+  "version": "0.0.1",
+  "description": "A not-so-simple blog/gemlog/phlog system made for tilde.team",
+  "install": "make install",
+  "scripts": [ "tildelog.sh" ],
+  "dependencies": { 
+    "lohn/md2gopher" : "main",
+    "lohn/md2gemini" : "main",
+    "lohn/md2html"   : "main",
+    "lohn/httplib"   : "master",
+    "lohn/cgibashopts" : "master"
+  }
+}
