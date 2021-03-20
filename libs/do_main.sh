@@ -30,13 +30,13 @@ do_main() {
     date_version_detect
 
     # Check for $EDITOR
-    [[ -z $EDITOR ]] &&
-        EDITOR=vi
+    [[ "x${EDITOR:-NONE}" == "xNONE" ]] &&
+        EDITOR="vi"
 
     # Check for validity of argument
     arg=${1-none}
-    arg2=${1-none}
-    arg3=${1-none}
+    arg2=${2-none}
+    arg3=${2-none}
     [[ $arg != "reset" && $arg != "post" && $arg != "rebuild" && $arg != "list" && $arg != "edit" && $arg != "delete" && $arg != "tags" ]] &&
         usage && return
 
