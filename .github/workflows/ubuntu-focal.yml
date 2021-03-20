@@ -1,0 +1,21 @@
+name: Ubuntu Focal Fossa
+
+on: [push, pull_request]
+
+env:
+  FORCE_COLOR: 1
+
+jobs:
+  ubuntu-focal:
+    runs-on: ubuntu-20.04
+    if: "!contains(github.event.head_commit.message, 'ci skip')"
+    strategy:
+      matrix:
+        shells:
+          - {shell: bash,        package: bash}
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v2
+      - run: sudo apt-get install -y ${{ matrix.shells.package }}
+      - run: sudo curl -fsSL https://git.io/shellspec | sh
+      - run: SH="${{ matrix.shells.shell }}" shellspec
