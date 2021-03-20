@@ -1,4 +1,4 @@
-# shellcheck shell=bash
+# shellcheck shell=sh
 Describe 'usage()'
     Before "global_software_name='tildelog'"
     Before "global_software_version='0.0.1'"

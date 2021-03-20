@@ -1,3 +1,3 @@
-# shellcheck shell=bash
+# shellcheck shell=sh
 
 set -eu

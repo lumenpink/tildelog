@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 # shellcheck disable=SC1091
 # shellcheck disable=SC2034
@@ -16,10 +16,11 @@ version=$(cat VERSION)
 export md2html_awk md2gemini_awk md2gopher_awk version
 
 ### BEGIN SOURCEFILES -> DO NOT REMOVE THIS LINE
-source ./functions/global_variables.sh
-source ./functions/date_version_detect.sh
-source ./libs/do_main.sh
-source ./libs/usage.sh
+. ./functions/global_variables.sh
+. ./functions/date_version_detect.sh
+. ./libs/do_main.sh
+. ./libs/new_entry.sh
+. ./libs/usage.sh
 
 ### END SOURCEFILES -> DO NOT REMOVE THIS LINE
 

@@ -32,5 +32,4 @@ jobs:
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
         run: |
-          echo aaa${COVERALLS_REPO_TOKEN}aaa
           shellspec --shell bash --kcov --kcov-options "--coveralls-id=${COVERALLS_REPO_TOKEN}"

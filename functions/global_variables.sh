@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 # shellcheck disable=SC2034
 # Global variables
 # It is recommended to perform a 'rebuild' after changing any of this in the code
@@ -6,7 +6,7 @@
 # Config file. Any settings "key=value" written there will override the
 # global_variables defaults.
 
-declare version
+export version
 # This function will load all the variables defined here. They might be overridden
 # by the 'global_config' file contents
 global_variables() {

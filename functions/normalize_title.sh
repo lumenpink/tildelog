@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 # Perform the post title -> filename conversion
 # Experts only. You may need to tune the locales too
 # Leave empty for no conversion, which is not recommended
