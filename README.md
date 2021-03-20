@@ -1,5 +1,5 @@
 [![ShellSpec](https://github.com/Lohn/tildelog/actions/workflows/ubuntu-focal.yml/badge.svg)](https://github.com/Lohn/tildelog/actions/workflows/ubuntu-focal.yml)
-[![Coverage Status](https://coveralls.io/repos/github/Lohn/tildelog/badge.svg?branch=main)](https://coveralls.io/github/Lohn/tildelog?branch=main)
+[![Code Coverage](https://codecov.io/gh/Lohn/tildelog/branch/main/graph/badge.svg?token=0I58TLFI96)](https://codecov.io/gh/Lohn/tildelog)
 
 # Tildelog
 
