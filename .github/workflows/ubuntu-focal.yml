@@ -14,8 +14,18 @@ jobs:
         shells:
           - {shell: bash,        package: bash}
       fail-fast: false
-    steps:
-      - uses: actions/checkout@v2
+    steps:      
       - run: sudo apt-get install -y ${{ matrix.shells.package }}
-      - run: curl -fsSL https://git.io/shellspec | sudo sh
+      - name: Install Shellspec - non-windows
+        if: ${{ matrix.os != 'windows' && matrix.snyk_install_method != 'alpine-binary' }}
+        run: |
+          curl -fsSL https://git.io/shellspec | sh -s -- -y
+          sudo ln -s ${HOME}/.local/lib/shellspec/shellspec /usr/local/bin/shellspec
+          ls -la ${HOME}/.local/lib/shellspec
+          echo "shellspec symlink:"
+          ls -la /usr/local/bin/shellspec
+          /usr/local/bin/shellspec --version
+          which shellspec
+          shellspec --version
+      - uses: actions/checkout@v2
       - run: SH="${{ matrix.shells.shell }}" shellspec
