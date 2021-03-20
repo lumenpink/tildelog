@@ -21,7 +21,7 @@ Read the Configuration section below for more information**
 
 To create your first post, just run:
 
-    bb post
+    tildelog post
     
 It will use Markdown.
     
