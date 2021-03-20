@@ -1,7 +1,7 @@
 {
   "name": "tildelog",
   "version": "0.0.1",
-  "description": "A not-so-simple blog/gemlog/phlog system made for tilde.team",
+  "description": "A not-so-simple blog/gemlog/phlog Static Site Generator made in Shell",
   "install": "make install",
   "scripts": [ "tildelog.sh" ],
   "dependencies": { 
