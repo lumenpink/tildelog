@@ -1,4 +1,4 @@
-name: Ubuntu Focal Fossa
+name: ShellSpec
 
 on: [push, pull_request]
 

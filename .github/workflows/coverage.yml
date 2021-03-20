@@ -13,9 +13,19 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install packages
         run: sudo apt-get install -y bash kcov
+      - name: Install Shellspec - non-windows
+        if: ${{ matrix.os != 'windows' }}
+        run: |
+          curl -fsSL https://git.io/shellspec | sh -s -- -y
+          sudo ln -s ${HOME}/.local/lib/shellspec/shellspec /usr/local/bin/shellspec
+          ls -la ${HOME}/.local/lib/shellspec
+          echo "shellspec symlink:"
+          ls -la /usr/local/bin/shellspec
+          /usr/local/bin/shellspec --version
+          which shellspec
+          shellspec --version
       - name: Run shellspec and upload coverage (Coveralls)
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
         run: |
-          sudo ./shellspec --task fixture:stat:prepare
           ./shellspec --shell bash --kcov --kcov-options "--coveralls-id=${COVERALLS_REPO_TOKEN}"
