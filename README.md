@@ -1,7 +1,9 @@
 [![ShellSpec](https://github.com/Lohn/tildelog/actions/workflows/ubuntu-focal.yml/badge.svg)](https://github.com/Lohn/tildelog/actions/workflows/ubuntu-focal.yml)
 [![Code Coverage](https://codecov.io/gh/Lohn/tildelog/branch/main/graph/badge.svg?token=0I58TLFI96)](https://codecov.io/gh/Lohn/tildelog)
 
-# Tildelog
+# Tildelog - A not-so-simple blog/gemlog/phlog Static Site Generator made in Shell
+
+
 
 This is the source for the Tildelog. 
 A script to quickly create contents for a HTML blog, a Gemini Capsule and a Gopher Hole based
