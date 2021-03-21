@@ -6,20 +6,21 @@
 export template_tags_line_header
 export global_url
 export convert_filename
+export global_pwd
 
 new_entry() {
     type=${1:-NONE}
-
     case "$type" in
         post)
-            printf 'post'
+            printf 'post\n'
+            exit
         ;;
         note)
             message=${2:-''}
             if [ "x${message}" = "x" ] ; then
-                printf 'create note'
+                printf 'create note\n'
             else 
-                printf 'create note with message %s' "${message}"         
+                printf 'create note with message %s\n' "${message}"         
             fi
             exit
         ;;  
@@ -27,23 +28,29 @@ new_entry() {
             file=${2:-''}
             message=${3:-''}   
             if [ "x${file}" = "x" ] ; then
-                printf 'No filename set'
+                printf 'No filename set\n'
                 exit 1
             else 
+                photo="$file";
                 if [ ! -f "${file}" ]; then 
-                    printf 'Filename %s not found' "${file}"
-                    exit 1
+                    if [ ! -f "${global_pwd}/${file}" ]; then 
+                        printf 'Filename %s not found\n' "${photo}"
+                        exit 1
+                    else                        
+                        photo="${global_pwd}/${file}"
+                        printf 'Filename %s found\n' "${photo}"
+                    fi
                 fi
             fi
-            if [ "x${message}" = "x" ] ; then
-                printf 'create photo message with file %s' "$file"
+            if [ "x${message}" = "x" ] || [ "x${message}" = "xNONE" ] ; then
+                printf 'create photo message with file %s\n' "$photo"
             else 
-                printf "create photo message: '%s' with file %s" "${message}" "$file"     
+                printf "create photo message: '%s' with file %s\n" "${message}" "$photo"     
             fi
             exit
         ;;  
         *)
-            printf "Type of entry %1 unsupported" "$type"
+            printf "Type of entry %1 unsupported\n" "$type"
             exit
         ;;
     esac

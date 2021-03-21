@@ -36,6 +36,9 @@ global_variables() {
     # CC by-nc-nd is a good starting point, you can change this to "&copy;" for Copyright
     global_license="CC by-nc-nd"
 
+    # OLD PWD
+    global_pwd="$PWD"
+
     # Blog generated files
     # index page of blog (it is usually good to use "index.html" here)
     index_file="index.html"

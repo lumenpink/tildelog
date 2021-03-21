@@ -9,6 +9,7 @@ export global_config
 export global_data_dir
 export global_config_prefix
 export global_cache_dir
+export global_pwd
 do_main() {
     # Load default configuration, then override settings with the config file
     global_variables
@@ -24,7 +25,7 @@ do_main() {
     # make sure we're in the right directory
     if [ "$(pwd)" != "$global_data_dir" ]; then
 
-        cd "$global_data_dir" || echo "Can't chdir to $global_data_dir"
+        cd "$global_data_dir" || echo "Can't chdir to $global_data_dir" || exit 1
     fi
 
     # Detect if using BSD date or GNU date
