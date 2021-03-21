@@ -18,7 +18,7 @@ date_version_detect() {
                 if [ "$arg" = "-r" ]; then
                     # Fall back to using stat for 'date -r'
                     format=$(printf "%s" "$arg3" | sed 's/^+//'a= ) # Ugly hack to remove the plus sign in POSIX
-                    stat -f "%Sm" -t "$format" "$2"               
+                    stat -f "%Sm" -t "$format" "$arg2"               
                 elif [ "$(printf '%s' $arg2 | cut -c1-6)" = '--date' ] ; then
                     # convert between dates using BSD date syntax
                     command date -j -f "$date_format_full" "$( printf '%s' $arg2 | sed 's/^--date=//' )" "$arg" 
