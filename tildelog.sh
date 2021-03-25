@@ -17,9 +17,12 @@ export md2html_awk md2gemini_awk md2gopher_awk version
 
 ### BEGIN SOURCEFILES -> DO NOT REMOVE THIS LINE
 . ./functions/global_variables.sh
+. ./functions/generic_utils.sh
 . ./functions/date_version_detect.sh
 . ./libs/do_main.sh
 . ./libs/new_entry.sh
+. ./libs/new_note.sh
+. ./libs/update_partial.sh
 . ./libs/usage.sh
 
 ### END SOURCEFILES -> DO NOT REMOVE THIS LINE

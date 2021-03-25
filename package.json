@@ -1,1 +1,14 @@
-bpkg.json
+{
+  "name": "tildelog",
+  "version": "0.0.1",
+  "description": "A not-so-simple blog/gemlog/phlog Static Site Generator made in Shell",
+  "install": "make install",
+  "scripts": [ "tildelog.sh" ],
+  "dependencies": { 
+    "lohn/md2gopher" : "main",
+    "lohn/md2gemini" : "main",
+    "lohn/md2html"   : "main",
+    "lohn/cgibashopts" : "master"
+  }
+}
+

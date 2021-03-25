@@ -13,45 +13,49 @@ export global_pwd
 do_main() {
     # Load default configuration, then override settings with the config file
     global_variables
-
-    # shellcheck disable=SC1090 # variable config file
+    
+    # shellcheck disable=1090
     [ -f "$global_config" ] && . "$global_config" > /dev/null 2>&1
-
+    
     # make sure the directories exist
     mkdir -p "$global_config_prefix"
     mkdir -p "$global_data_dir"
     mkdir -p "$global_cache_dir"
-
+    
     # make sure we're in the right directory
-    if [ "$(pwd)" != "$global_data_dir" ]; then
-
-        cd "$global_data_dir" || echo "Can't chdir to $global_data_dir" || exit 1
+    #if [ "$(pwd)" != "$global_data_dir" ]; then
+    #    cd "${global_data_dir}" || echo "Can't chdir to ${global_data_dir}" || exit 1
+    #fi
+    
+    if [ ! -f "${global_cache_dir}/timestamps" ] ; then
+        touch "${global_cache_dir}/timestamps"
     fi
-
+    
+    
     # Detect if using BSD date or GNU date
     date_version_detect
-
+    
     # Check for $EDITOR
     [ "x${EDITOR:-NONE}" = "xNONE" ] &&
-        EDITOR="vi"
-
+    EDITOR="vi"
+    
     # Check for validity of argument
     arg=${1-NONE}
     arg2=${2-NONE}
     arg3=${3-NONE}
-   
+    
     if [ "x$arg" = "xNONE" ] ; then
-        usage 
+        usage
         #exit 0
     fi
     
-    case "$arg" in 
+    case "$arg" in
         "list")
             list_posts
             #exit 0
         ;;
         "tag")
-            list_tags "$arg2" 
+            list_tags "$arg2"
             #exit 0
         ;;
         "edit")
@@ -83,5 +87,5 @@ do_main() {
             #exit 1
         ;;
     esac
- 
+    
 }
